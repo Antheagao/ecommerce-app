@@ -116,7 +116,7 @@
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -350px;
+  right: -420px;
   width: 320px;
   height: 100%;
   background: #1C1E22; /* Dark background to match navbar */
