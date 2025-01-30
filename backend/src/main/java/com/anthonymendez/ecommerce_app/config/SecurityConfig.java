@@ -16,12 +16,16 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable() // Disable CSRF for simplicity (not recommended for production)
-            .authorizeHttpRequests()
-            .requestMatchers("/api/users/**").permitAll() // Allow unauthenticated access to `/api/users`
-            .anyRequest().authenticated() // Require authentication for all other endpoints
-            .and()
-            .httpBasic(); // Use HTTP Basic Authentication for secured endpoints (optional)
+        http
+            .cors().and() // ✅ Ensure CORS is applied before security rules
+            .csrf().disable() // ✅ Disable CSRF for API requests
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/users/**").permitAll()
+                .requestMatchers("/api/products/**").permitAll()
+                .requestMatchers("/api/auth/register", "/api/auth/login").permitAll()
+                .anyRequest().authenticated() // Require authentication for other endpoints
+            )
+            .httpBasic(); // Optional: Use HTTP Basic Authentication for secured endpoints
 
         return http.build();
     }

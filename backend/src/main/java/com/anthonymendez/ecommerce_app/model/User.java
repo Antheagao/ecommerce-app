@@ -22,6 +22,16 @@ public class User {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    // Constructors
+    public User() {}
+
+    public User(String username, String email, String passwordHash) {
+        this.username = username;
+        this.email = email;
+        this.passwordHash = passwordHash;
+    }
+    
+
     // Getters and Setters
     public Long getId() {
         return id;

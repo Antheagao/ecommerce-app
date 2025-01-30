@@ -1,0 +1,80 @@
+.checkout-container {
+  max-width: 600px;
+  width: 90%; /* Ensure it adjusts to screen size */
+  margin: 40px auto;
+  padding: 20px;
+  background: #1C1E22;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.order-summary {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+}
+
+.checkout-item:last-child {
+  border-bottom: none;
+}
+
+.total-amount {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.checkout-form input {
+  width: calc(100% - 20px); /* Prevents input fields from overflowing */
+  max-width: 550px; /* Ensures it doesn't go beyond the container */
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #2E3135;
+  color: white;
+  outline: none;
+  margin: 0 auto; /* Centers the input */
+}
+
+.checkout-form input::placeholder {
+  color: #aaa;
+}
+
+.checkout-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 550px;
+  width: calc(100% - 20px);
+  margin: 10px auto;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
